@@ -27,7 +27,7 @@ class TitleScreen {
       this.images[i] = ASSET_MANAGER.getAsset("./background/MainStage/background" + i + ".png");
     }
 
-    this.wolf = new Wolf(this.game, 200, 490);
+    // this.wolf = new Wolf(this.game, 200, 490);
     this.orochi = new Orochi(this.game, 300, 350);
     this.samurai = new Samurai(this.game, 700, 350);
 
@@ -66,12 +66,12 @@ class TitleScreen {
     }
     // If we are on the Contract Title Page.
     else if (this.title == 1) {
-      if (this.game.click && this.game.click.y > 1 * PARAMS.BLOCKWIDTH && this.game.click.y < 2 * PARAMS.BLOCKWIDTH) {
-        ASSET_MANAGER.playAsset("./sound/lazerButton.wav");
-        this.selection1 = true;
-        this.selection2 = false;
-        this.selection3 = false;
-      }
+      // if (this.game.click && this.game.click.y > 1 * PARAMS.BLOCKWIDTH && this.game.click.y < 2 * PARAMS.BLOCKWIDTH) {
+      //   ASSET_MANAGER.playAsset("./sound/lazerButton.wav");
+      //   this.selection1 = true;
+      //   this.selection2 = false;
+      //   this.selection3 = false;
+      // }
       if (this.game.click && this.game.click.y > 3 * PARAMS.BLOCKWIDTH && this.game.click.y < 4 * PARAMS.BLOCKWIDTH) {
         ASSET_MANAGER.playAsset("./sound/lazerButton.wav");
         this.selection1 = false;
@@ -84,13 +84,13 @@ class TitleScreen {
         this.selection2 = false;
         this.selection3 = true;
       }
-      if (this.selection1 && this.game.click && this.game.click.y > 2.5 * PARAMS.BLOCKWIDTH && this.game.click.y < 3 * PARAMS.BLOCKWIDTH) {
-        ASSET_MANAGER.playAsset("./sound/lazerReturn.wav");
-        this.title = 0;
-        this.selection1 = false;
-        this.selection2 = false;
-        this.selection3 = false;
-      }
+      // if (this.selection1 && this.game.click && this.game.click.y > 2.5 * PARAMS.BLOCKWIDTH && this.game.click.y < 3 * PARAMS.BLOCKWIDTH) {
+      //   ASSET_MANAGER.playAsset("./sound/lazerReturn.wav");
+      //   this.title = 0;
+      //   this.selection1 = false;
+      //   this.selection2 = false;
+      //   this.selection3 = false;
+      // }
       if (this.selection2 && this.game.click && this.game.click.y > 4.5 * PARAMS.BLOCKWIDTH && this.game.click.y < 5 * PARAMS.BLOCKWIDTH) {
         ASSET_MANAGER.playAsset("./sound/lazerReturn.wav");
         this.title = 0;
@@ -105,14 +105,15 @@ class TitleScreen {
         this.selection2 = false;
         this.selection3 = false;
       }
-      if (this.selection1 && this.game.click && this.game.click.y > 2 * PARAMS.BLOCKWIDTH && this.game.click.y < 2.5 * PARAMS.BLOCKWIDTH) {
-        ASSET_MANAGER.playAsset("./sound/lazerButton.wav");
-        this.title = 2;
-        this.game.camera.load(levelOne, this.wolf);
-        this.selection1 = false;
-        this.selection2 = false;
-        this.selection3 = false;
-      } else if (this.selection2 && this.game.click && this.game.click.y > 4 * PARAMS.BLOCKWIDTH && this.game.click.y < 4.5 * PARAMS.BLOCKWIDTH) {
+      // if (this.selection1 && this.game.click && this.game.click.y > 2 * PARAMS.BLOCKWIDTH && this.game.click.y < 2.5 * PARAMS.BLOCKWIDTH) {
+      //   ASSET_MANAGER.playAsset("./sound/lazerButton.wav");
+      //   this.title = 2;
+      //   this.game.camera.load(levelOne, this.orochi);
+      //   this.selection1 = false;
+      //   this.selection2 = false;
+      //   this.selection3 = false;
+      // }
+      if (this.selection2 && this.game.click && this.game.click.y > 4 * PARAMS.BLOCKWIDTH && this.game.click.y < 4.5 * PARAMS.BLOCKWIDTH) {
         ASSET_MANAGER.playAsset("./sound/lazerButton.wav");
         this.title = 2;
         this.game.camera.load(levelOne, this.orochi);
@@ -176,47 +177,49 @@ class TitleScreen {
         ctx.drawImage(ASSET_MANAGER.getAsset("./sprites/hero.png"), 0, 0, 65, 50, (x - 1.5) * PARAMS.BLOCKWIDTH, 7 * PARAMS.BLOCKWIDTH, 125, 75);
       }
     } else if (this.title == 1) {
-      ctx.font = PARAMS.BLOCKWIDTH / 2 + 'px "Press Start 2P"';
+      // ctx.font = PARAMS.BLOCKWIDTH / 2 + 'px "Press Start 2P"';
+      // ctx.fillStyle = "White";
+      // ctx.fillText("Contract I: Cyberhydraic Maiden", 5 * PARAMS.BLOCKWIDTH, 2 * PARAMS.BLOCKWIDTH);
+      // ctx.strokeText("Contract I: Cyberhydraic Maiden", 5 * PARAMS.BLOCKWIDTH, 2 * PARAMS.BLOCKWIDTH);
+      // if (this.game.mouse && this.game.mouse.y > 1 * PARAMS.BLOCKWIDTH && this.game.mouse.y < 2 * PARAMS.BLOCKWIDTH) {
+      //   ctx.fillStyle = "#4aedff";
+      //   ctx.fillText("Contract I: Cyberhydraic Maiden", 5 * PARAMS.BLOCKWIDTH, 2 * PARAMS.BLOCKWIDTH);
+      //   ctx.strokeText("Contract I: Cyberhydraic Maiden", 5 * PARAMS.BLOCKWIDTH, 2 * PARAMS.BLOCKWIDTH);
+      // }
+      // if (this.selection1) {
+      //   ctx.fillStyle = "White";
+      //   ctx.font = PARAMS.BLOCKWIDTH / 4 + 'px "Press Start 2P"';
+      //   ctx.fillText("Accept", 6 * PARAMS.BLOCKWIDTH, 2.5 * PARAMS.BLOCKWIDTH);
+
+      //   if (this.game.mouse && this.game.mouse.y > 2 * PARAMS.BLOCKWIDTH && this.game.mouse.y < 2.5 * PARAMS.BLOCKWIDTH) {
+      //     ctx.drawImage(ASSET_MANAGER.getAsset("./sprites/hero.png"), 0, 0, 65, 50, (x - 1.8) * PARAMS.BLOCKWIDTH, 2.0 * PARAMS.BLOCKWIDTH, 70, 35);
+      //   }
+      //   ctx.fillText("Return", 6 * PARAMS.BLOCKWIDTH, 3 * PARAMS.BLOCKWIDTH);
+
+      //   if (this.game.mouse && this.game.mouse.y > 2.5 * PARAMS.BLOCKWIDTH && this.game.mouse.y < 3 * PARAMS.BLOCKWIDTH) {
+      //     ctx.drawImage(ASSET_MANAGER.getAsset("./sprites/hero.png"), 0, 0, 65, 50, (x - 1.8) * PARAMS.BLOCKWIDTH, 2.5 * PARAMS.BLOCKWIDTH, 70, 35);
+      //   }
+      // }
+
       ctx.fillStyle = "White";
-      ctx.fillText("Contract I: Cyber Wolf", 5 * PARAMS.BLOCKWIDTH, 2 * PARAMS.BLOCKWIDTH);
-      ctx.strokeText("Contract I: Cyber Wolf", 5 * PARAMS.BLOCKWIDTH, 2 * PARAMS.BLOCKWIDTH);
-      if (this.game.mouse && this.game.mouse.y > 1 * PARAMS.BLOCKWIDTH && this.game.mouse.y < 2 * PARAMS.BLOCKWIDTH) {
-        ctx.fillStyle = "#4aedff";
-        ctx.fillText("Contract I: Cyber Wolf", 5 * PARAMS.BLOCKWIDTH, 2 * PARAMS.BLOCKWIDTH);
-        ctx.strokeText("Contract I: Cyber Wolf", 5 * PARAMS.BLOCKWIDTH, 2 * PARAMS.BLOCKWIDTH);
-      }
-      if (this.selection1) {
-        ctx.fillStyle = "White";
-        ctx.font = PARAMS.BLOCKWIDTH / 4 + 'px "Press Start 2P"';
-        ctx.fillText("Accept", 6 * PARAMS.BLOCKWIDTH, 2.5 * PARAMS.BLOCKWIDTH);
-
-        if (this.game.mouse && this.game.mouse.y > 2 * PARAMS.BLOCKWIDTH && this.game.mouse.y < 2.5 * PARAMS.BLOCKWIDTH) {
-          ctx.drawImage(ASSET_MANAGER.getAsset("./sprites/hero.png"), 0, 0, 65, 50, (x - 1.8) * PARAMS.BLOCKWIDTH, 2.0 * PARAMS.BLOCKWIDTH, 70, 35);
-        }
-        ctx.fillText("Return", 6 * PARAMS.BLOCKWIDTH, 3 * PARAMS.BLOCKWIDTH);
-
-        if (this.game.mouse && this.game.mouse.y > 2.5 * PARAMS.BLOCKWIDTH && this.game.mouse.y < 3 * PARAMS.BLOCKWIDTH) {
-          ctx.drawImage(ASSET_MANAGER.getAsset("./sprites/hero.png"), 0, 0, 65, 50, (x - 1.8) * PARAMS.BLOCKWIDTH, 2.5 * PARAMS.BLOCKWIDTH, 70, 35);
-        }
-      }
-
-      ctx.fillStyle = "White";
+      ctx.strokeStyle = "Black";
       ctx.font = PARAMS.BLOCKWIDTH / 2 + 'px "Press Start 2P"';
-      ctx.fillText("Contract II: Cyberhydraic Maiden", 5 * PARAMS.BLOCKWIDTH, 4 * PARAMS.BLOCKWIDTH);
-      ctx.strokeText("Contract II: Cyberhydraic Maiden", 5 * PARAMS.BLOCKWIDTH, 4 * PARAMS.BLOCKWIDTH);
+      ctx.fillText("Contract I: Cyberhydraic Maiden", 3 * PARAMS.BLOCKWIDTH, 4 * PARAMS.BLOCKWIDTH);
+      ctx.strokeText("Contract I: Cyberhydraic Maiden", 3 * PARAMS.BLOCKWIDTH, 4 * PARAMS.BLOCKWIDTH);
       if (this.game.mouse && this.game.mouse.y > 3 * PARAMS.BLOCKWIDTH && this.game.mouse.y < 4 * PARAMS.BLOCKWIDTH) {
         ctx.fillStyle = "#4aedff";
-        ctx.fillText("Contract II: Cyberhydraic Maiden", 5 * PARAMS.BLOCKWIDTH, 4 * PARAMS.BLOCKWIDTH);
-        ctx.strokeText("Contract II: Cyberhydraic Maiden", 5 * PARAMS.BLOCKWIDTH, 4 * PARAMS.BLOCKWIDTH);
+        ctx.fillText("Contract I: Cyberhydraic Maiden", 3 * PARAMS.BLOCKWIDTH, 4 * PARAMS.BLOCKWIDTH);
+        ctx.strokeText("Contract I: Cyberhydraic Maiden", 3 * PARAMS.BLOCKWIDTH, 4 * PARAMS.BLOCKWIDTH);
       }
       if (this.selection2) {
         ctx.fillStyle = "White";
         ctx.font = PARAMS.BLOCKWIDTH / 4 + 'px "Press Start 2P"';
-
+        ctx.strokeText("Accept", 6 * PARAMS.BLOCKWIDTH, 4.5 * PARAMS.BLOCKWIDTH);
         ctx.fillText("Accept", 6 * PARAMS.BLOCKWIDTH, 4.5 * PARAMS.BLOCKWIDTH);
         if (this.game.mouse && this.game.mouse.y > 4 * PARAMS.BLOCKWIDTH && this.game.mouse.y < 4.5 * PARAMS.BLOCKWIDTH) {
           ctx.drawImage(ASSET_MANAGER.getAsset("./sprites/hero.png"), 0, 0, 65, 50, (x - 1.8) * PARAMS.BLOCKWIDTH, 4.0 * PARAMS.BLOCKWIDTH, 70, 35);
         }
+        ctx.strokeText("Return", 6 * PARAMS.BLOCKWIDTH, 5 * PARAMS.BLOCKWIDTH);
         ctx.fillText("Return", 6 * PARAMS.BLOCKWIDTH, 5 * PARAMS.BLOCKWIDTH);
         if (this.game.mouse && this.game.mouse.y > 4.5 * PARAMS.BLOCKWIDTH && this.game.mouse.y < 5 * PARAMS.BLOCKWIDTH) {
           ctx.drawImage(ASSET_MANAGER.getAsset("./sprites/hero.png"), 0, 0, 65, 50, (x - 1.8) * PARAMS.BLOCKWIDTH, 4.5 * PARAMS.BLOCKWIDTH, 70, 35);
@@ -225,22 +228,27 @@ class TitleScreen {
       ctx.fillStyle = "White";
       ctx.font = PARAMS.BLOCKWIDTH / 2 + 'px "Press Start 2P"';
       ctx.fillStyle = "White";
-      ctx.fillText("Final Contract: Nano Shogun", 5 * PARAMS.BLOCKWIDTH, 6 * PARAMS.BLOCKWIDTH);
-      ctx.strokeText("Final Contract: Nano Shogun", 5 * PARAMS.BLOCKWIDTH, 6 * PARAMS.BLOCKWIDTH);
+      ctx.fillText("Contract II: Nano Shogun", 4 * PARAMS.BLOCKWIDTH, 6 * PARAMS.BLOCKWIDTH);
+      ctx.strokeText("Contract II: Nano Shogun", 4 * PARAMS.BLOCKWIDTH, 6 * PARAMS.BLOCKWIDTH);
       if (this.game.mouse && this.game.mouse.y > 5 * PARAMS.BLOCKWIDTH && this.game.mouse.y < 6 * PARAMS.BLOCKWIDTH) {
         ctx.fillStyle = "#4aedff";
-        ctx.fillText("Final Contract: Nano Shogun", 5 * PARAMS.BLOCKWIDTH, 6 * PARAMS.BLOCKWIDTH);
-        ctx.strokeText("Final Contract: Nano Shogun", 5 * PARAMS.BLOCKWIDTH, 6 * PARAMS.BLOCKWIDTH);
+        ctx.fillText("Contract II: Nano Shogun", 4 * PARAMS.BLOCKWIDTH, 6 * PARAMS.BLOCKWIDTH);
+        ctx.strokeText("Contract II: Nano Shogun", 4 * PARAMS.BLOCKWIDTH, 6 * PARAMS.BLOCKWIDTH);
       }
 
       if (this.selection3) {
         ctx.fillStyle = "White";
+
         ctx.font = PARAMS.BLOCKWIDTH / 4 + 'px "Press Start 2P"';
+        ctx.strokeText("Accept", 6 * PARAMS.BLOCKWIDTH, 6.5 * PARAMS.BLOCKWIDTH);
         ctx.fillText("Accept", 6 * PARAMS.BLOCKWIDTH, 6.5 * PARAMS.BLOCKWIDTH);
+
         if (this.game.mouse && this.game.mouse.y > 6 * PARAMS.BLOCKWIDTH && this.game.mouse.y < 6.5 * PARAMS.BLOCKWIDTH) {
           ctx.drawImage(ASSET_MANAGER.getAsset("./sprites/hero.png"), 0, 0, 65, 50, (x - 1.8) * PARAMS.BLOCKWIDTH, 6.0 * PARAMS.BLOCKWIDTH, 70, 35);
         }
+        ctx.strokeText("Return", 6 * PARAMS.BLOCKWIDTH, 7 * PARAMS.BLOCKWIDTH);
         ctx.fillText("Return", 6 * PARAMS.BLOCKWIDTH, 7 * PARAMS.BLOCKWIDTH);
+
         if (this.game.mouse && this.game.mouse.y > 6.5 * PARAMS.BLOCKWIDTH && this.game.mouse.y < 7 * PARAMS.BLOCKWIDTH) {
           ctx.drawImage(ASSET_MANAGER.getAsset("./sprites/hero.png"), 0, 0, 65, 50, (x - 1.8) * PARAMS.BLOCKWIDTH, 6.5 * PARAMS.BLOCKWIDTH, 70, 35);
         }
@@ -285,9 +293,9 @@ class TitleScreen {
         ctx.fillText("- (22 second cooldown)", 275, 525);
       } else {
         ctx.drawImage(ASSET_MANAGER.getAsset("./sprites/heroAbilities.png"), 64, 64, 32, 32, 100, 400, 2.5 * PARAMS.BLOCKWIDTH, 2.5 * PARAMS.BLOCKWIDTH);
-        ctx.strokeText("Unlock by completing [Contract II: Cyberhydraic", 275, 435);
+        ctx.strokeText("Unlock by completing [Contract I: Cyberhydraic", 275, 435);
         ctx.strokeText("Maiden]", 275, 465);
-        ctx.fillText("Unlock by completing [Contract II: Cyberhydraic", 275, 435);
+        ctx.fillText("Unlock by completing [Contract I: Cyberhydraic", 275, 435);
         ctx.fillText("Maiden]", 275, 465);
       }
     } else if (this.title == 3) {
